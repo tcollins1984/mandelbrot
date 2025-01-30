@@ -35,11 +35,11 @@ def julia_process(z,c=0,steps=10):
         points.append(z)
     real = [z.real for z in points]
     imaginary = [z.imag for z in points]
-    print(points)
+    # print(points)
     converges = has_converged(points)
     return points,real,imaginary,converges
 
-js = julia_process(0.1+0.1j,steps=20,c=0)
+js = julia_process(0.2+.2j,steps=20,c=0)
 plt.figure(figsize=(10,10))
 for i in range(len(js[1]) - 1):
     # Arrow ends precisely at the next point
@@ -51,7 +51,7 @@ for i in range(len(js[1]) - 1):
             arrowstyle='->',
             color='blue',
             lw=1.5,  # Line width
-            shrinkA=0, shrinkB=0  # Disable shrinking to keep arrow precise
+            shrinkA=1, shrinkB=1  # Disable shrinking to keep arrow precise
         )
     )
 
