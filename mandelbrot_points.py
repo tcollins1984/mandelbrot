@@ -7,7 +7,9 @@ for i in range(100000):
 print(candidates_for_mandelbrot)
 
 def mandelbrot_process(c,z=0,steps=1000):
-    
+    '''
+    For a given c this function applies the Julia Process steps number of times to test for divergence.
+    '''
     for _ in range(steps):
         z = pow(z,2) + c
         if abs(z) > 2:
@@ -17,7 +19,7 @@ def mandelbrot_process(c,z=0,steps=1000):
    
     
 
-
+#plot the points in the complex plane.
 def points_in_mandelbrot(complex_points):
     mandelbrot_points = [point for point in complex_points if mandelbrot_process(point)]
     
