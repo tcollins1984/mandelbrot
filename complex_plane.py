@@ -2,9 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def radius(z):
+    '''
+    Calculates the distance from the origin in the complex plane.'''
     return np.sqrt(z.real**2 + z.imag**2)
 
 def angle(z):
+    '''
+    Calculates the angle in radians from the positive x-axis in the complex plane.
+    '''   
     return np.arctan2(z.imag, z.real)
 def has_converged(points, ratio_tolerance=1e-3, epsilon=1e-6):
     """
@@ -29,6 +34,9 @@ def has_converged(points, ratio_tolerance=1e-3, epsilon=1e-6):
     return True  # Converging or stationary if all ratios are <= 1
 
 def julia_process(z,c=0,steps=10):
+    '''
+    Generates a sequence of complex numbers based on the Julia set iteration algorithm
+    with default c=0.'''
     points = []
     for i in range(steps):
         z = z**2 + c
